@@ -60,6 +60,6 @@ stages:
                     command: 'upgrade'
                     chartType: 'Name'
                     #chartPath: '_blobs/spinkube-chart-0.2.1.tgz'
-                    chartName: 'spinkube-chart'
+                    chartName: 'spinkube.azurecr.io/helm/spinkube-chart-0.2.1.tgz'
                     releaseName: '$(containerRepository)'
                     #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
