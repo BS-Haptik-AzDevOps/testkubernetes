@@ -58,4 +58,4 @@ stages:
                     chartType: 'Name'
                     chartName: '$(containerRegistry)/spinkube-chart-0.2.1'
                     releaseName: '$(containerRepository)'
-                    overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository):18'
+                    overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
