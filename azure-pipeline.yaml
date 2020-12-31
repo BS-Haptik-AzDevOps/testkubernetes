@@ -45,6 +45,15 @@ stages:
                     inlineScript: 'az acr helm repo add --name $(containerRegistry)'
                     failOnStandardError: false
 
+                - task: AzureCLI@3
+                  displayName: 'Add ACR to Helm Repository list'
+                  inputs:
+                    azureSubscription: '$(azuresubscription)'
+                    scriptType: 'bash'
+                    scriptLocation: 'inlineScript'
+                    inlineScript: 'az acr helm repo add --name $(containerRegistry)'
+                    failOnStandardError: false
+
                 - task: HelmDeploy@0
                   displayName: 'Helm Deploy'
                   inputs:
@@ -54,7 +63,7 @@ stages:
                     kubernetesCluster: '$(kubernetesCluster)'
                     useClusterAdmin: true
                     namespace: 'azdevops'
-                    command: 'upgrade'
+                    command: 'helm repo update'
                     chartType: 'Name'
                     chartName: 'spinkube-chart-0.2.1.tgz'
                     releaseName: '$(containerRepository)'
