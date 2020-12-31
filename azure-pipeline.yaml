@@ -10,7 +10,7 @@ trigger:
 
 variables:
   helmVersion: 3.0.2
-  containerRepository: spinnaker
+  containerRepository: spinnaker:18
   containerRegistry: spinkube
   azuresubscription: BS-Haptik-Test-SVC-Connection
   rggroup: Spinnaker-k8s
