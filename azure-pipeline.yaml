@@ -52,6 +52,9 @@ stages:
                     azureSubscription: '$(azuresubscription)'
                     azureResourceGroup: '$(rggroup)'
                     kubernetesCluster: '$(kubernetesCluster)'
+                    azureContainerRegistry: 'spinkube'
+                    azureResourceGroupForACR: '$(rggroup)'
+                    azureSubscriptionForACR: '$(azuresubscription)'
                     useClusterAdmin: true
                     namespace: 'azdevops'
                     command: 'upgrade'
