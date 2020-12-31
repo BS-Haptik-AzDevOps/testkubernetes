@@ -11,7 +11,7 @@ trigger:
 variables:
   helmVersion: 3.0.2
   containerRepository: spinnaker
-  containerRegistry: spinkube
+  containerRegistry: spinkube.azurecr.io
   azuresubscription: BS-Haptik-Test-SVC-Connection
   rggroup: Spinnaker-k8s
   kubernetesCluster: bs-spinnaker
