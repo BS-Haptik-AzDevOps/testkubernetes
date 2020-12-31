@@ -10,7 +10,7 @@ trigger:
 
 variables:
   helmVersion: 3.0.2
-  containerRepository: spinnaker:18
+  containerRepository: spinnaker
   containerRegistry: spinkube
   azuresubscription: BS-Haptik-Test-SVC-Connection
   rggroup: Spinnaker-k8s
@@ -58,4 +58,4 @@ stages:
                     chartType: 'Name'
                     chartName: '$(containerRegistry)/$(containerRepository)'
                     releaseName: '$(containerRepository)'
-                    overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
+                    overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository):18'
