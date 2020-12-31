@@ -24,7 +24,7 @@ stages:
         displayName: Deploy to QA Environment
         pool:
           vmImage: 'ubuntu-latest'
-        environment: QA.default
+        environment: QA.azdevops
         strategy:
           runOnce:
             deploy:
