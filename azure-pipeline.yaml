@@ -45,7 +45,7 @@ stages:
                     inlineScript: 'az acr helm repo add --name $(containerRegistry)'
                     failOnStandardError: false
 
-                - task: HelmDeploy@1
+                - task: HelmDeploy@0
                   displayName: 'Helm command'
                   inputs:
                     connectionType: 'Azure Resource Manager'
