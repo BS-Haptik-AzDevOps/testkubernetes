@@ -56,6 +56,6 @@ stages:
                     namespace: 'azdevops'
                     command: 'upgrade'
                     chartType: 'Name'
-                    chartName: '$(containerRegistry)/$(containerRepository)'
+                    chartName: '$(containerRegistry)/spinkube-chart-0.2.1'
                     releaseName: '$(containerRepository)'
                     overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository):18'
