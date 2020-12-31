@@ -52,7 +52,7 @@ stages:
                     azureSubscription: '$(azuresubscription)'
                     azureResourceGroup: '$(rggroup)'
                     kubernetesCluster: '$(kubernetesCluster)'
-                    azureContainerRegistry: 'spinkube'
+                    azureContainerRegistry: '$(containerRegistry)'
                     azureResourceGroupForACR: '$(rggroup)'
                     azureSubscriptionForACR: '$(azuresubscription)'
                     useClusterAdmin: true
