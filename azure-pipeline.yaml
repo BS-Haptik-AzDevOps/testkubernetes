@@ -45,15 +45,6 @@ stages:
                     inlineScript: 'az acr helm repo add --name $(containerRegistry)'
                     failOnStandardError: false
 
-                - task: AzureCLI@3
-                  displayName: 'Add ACR to Helm Repository list'
-                  inputs:
-                    azureSubscription: '$(azuresubscription)'
-                    scriptType: 'bash'
-                    scriptLocation: 'inlineScript'
-                    inlineScript: 'az acr helm repo add --name $(containerRegistry)'
-                    failOnStandardError: false
-
                 - task: HelmDeploy@0
                   displayName: 'Helm Deploy'
                   inputs:
