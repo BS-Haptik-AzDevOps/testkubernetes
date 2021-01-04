@@ -7,14 +7,6 @@ parameters:
     type: string
   - name: namespace
     type: string
-  - name: imageTag
-    type: number
-    displayName: 'Image Tag'
-    default: 0
-    values:
-      - 1
-      - 2
-      - 3
 
 variables:
   helmVersion: 3.2.4
@@ -25,4 +17,3 @@ variables:
   kubernetesCluster: ${{ parameters.kubernetesCluster }}
   env: ${{ parameters.env }}
   namespace: ${{ parameters.namespace }}
-  imageTag: ${{ parameters.imageTag }}

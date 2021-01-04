@@ -1,6 +1,11 @@
 trigger: none
 pr: none
 
+parameters:
+  - name: imageTag
+    type: number
+    displayName: 'Image Tag'
+    
 variables:
   - template: parameter-test.yaml
     parameters:
