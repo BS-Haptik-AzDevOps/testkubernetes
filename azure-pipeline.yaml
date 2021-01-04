@@ -55,10 +55,11 @@ stages:
                     azureResourceGroupForACR: '$(rggroup)'
                     azureSubscriptionForACR: '$(azuresubscription)'
                     useClusterAdmin: true
-                    namespace: 'azdevops'
-                    command: 'upgrade'
-                    chartType: 'Name'
-                    chartPath: 'spinkube-chart'
-                    chartName: 'spinkube-chart'
-                    #releaseName: 'spinkube-chart'
+                    namespace: azdevops
+                    command: upgrade
+                    chartType: Name
+                    chartPath: spinkube-chart
+                    chartName: spinkube-chart
+                    releaseName: spinkube-chart
+                    install: true
                     #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
