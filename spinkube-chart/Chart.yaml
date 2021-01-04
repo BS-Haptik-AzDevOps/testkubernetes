@@ -1,0 +1,6 @@
+apiVersion: v2
+name: spinkube-chart
+description: Test Helm chart for spinnaker
+type: application
+version: 0.2.0
+#appVersion: latest
