@@ -20,3 +20,4 @@ variables:
   kubernetesCluster: ${{ parameters.kubernetesCluster }}
   env: ${{ parameters.env }}
   namespace: ${{ parameters.namespace }}
+  imageTag: ${{ parameters.imageTag }}
