@@ -1,4 +1,5 @@
-    
+- checkout: self
+
 trigger:
   batch: true
   paths:
@@ -29,7 +30,6 @@ stages:
           runOnce:
             deploy:
               steps:
-                - checkout: none
 
                 - task: HelmInstaller@1
                   displayName: 'Install Helm'
@@ -58,8 +58,8 @@ stages:
                     useClusterAdmin: true
                     namespace: 'azdevops'
                     command: 'upgrade'
-                    chartType: 'Name'
-                    #chartPath: 'spinkube.azurecr.io/helm/spinkube-chart-0.2.1.tgz'
-                    chartName: 'spinkube-chart-0.2.1.tgz'
+                    chartType: 'application'
+                    chartPath: 'spinkube-chart'
+                    chartName: 'spinkube-chart'
                     releaseName: '$(containerRepository)'
                     #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
