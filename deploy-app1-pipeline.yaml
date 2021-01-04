@@ -2,7 +2,7 @@ trigger: none
 pr: none
 
 variables:
-  - template: deploy-variable-template.yaml
+  - template: parameter-test.yaml
     parameters:
       kubernetesCluster: bs-spinnaker
       rggroup: Spinnaker-k8s
