@@ -10,6 +10,7 @@ parameters:
   - name: imageTag
     type: number
     displayName: 'Image Tag'
+    default: 0
     values:
       - 1
       - 2
