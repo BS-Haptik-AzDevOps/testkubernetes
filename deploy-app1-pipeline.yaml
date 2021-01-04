@@ -1,0 +1,26 @@
+trigger: none
+pr: none
+
+variables:
+  - template: deploy-variable-template.yaml
+    parameters:
+      kubernetesCluster: bs-spinnaker
+      rggroup: Spinnaker-k8s
+      env: QA.azdevops
+      namespace: azdevops
+
+
+stages:
+  - stage:
+    displayName: Deploy to QA
+    jobs:
+      - deployment: QA
+        displayName: Deploy to QA Environment
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: '$(env)'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yaml
