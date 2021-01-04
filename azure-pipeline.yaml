@@ -57,7 +57,7 @@ stages:
                     useClusterAdmin: true
                     namespace: 'azdevops'
                     command: 'upgrade'
-                    chartType: 'application'
+                    chartType: 'Name'
                     chartPath: 'spinkube-chart'
                     chartName: 'spinkube-chart'
                     releaseName: '$(containerRepository)'
