@@ -1,7 +1,8 @@
 parameters:
+  kubernetesCluster: ""
   rggroup: ""
-  k8scluster: ""
   env: ""
+  namespace: ""
 
 variables:
   helmVersion: 3.2.4
@@ -9,5 +10,6 @@ variables:
   containerRegistry: spinkube.azurecr.io
   azuresubscription: BS-Haptik-Test-SVC-Connection
   rggroup: ${{ parameters.rggroup }}
-  k8scluster: ${{ parameters.k8scluster }}
+  kubernetesCluster: ${{ parameters.kubernetesCluster }}
   env: ${{ parameters.env }}
+  namespace: ${{ parameters.namespace }}

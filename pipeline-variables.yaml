@@ -10,8 +10,8 @@ trigger:
 variables:
   - template: deploy-variable-template.yaml
     parameters:
-      rggroup: Spinnaker-k8s
       kubernetesCluster: bs-spinnaker
+      rggroup: Spinnaker-k8s
       env: QA.azdevops
       namespace: azdevops
 
