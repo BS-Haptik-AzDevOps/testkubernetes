@@ -1,0 +1,13 @@
+parameters:
+  rggroup: ""
+  k8scluster: ""
+  env: ""
+
+variables:
+  helmVersion: 3.2.4
+  containerRepository: spinnaker
+  containerRegistry: spinkube.azurecr.io
+  azuresubscription: BS-Haptik-Test-SVC-Connection
+  rggroup: ${{ parameters.rggroup }}
+  k8scluster: ${{ parameters.k8scluster }}
+  env: ${{ parameters.env }}
