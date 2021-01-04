@@ -10,6 +10,10 @@ parameters:
   - name: imageTag
     type: number
     displayName: 'Image Tag'
+    values:
+      - 1
+      - 2
+      - 3
 
 variables:
   helmVersion: 3.2.4
