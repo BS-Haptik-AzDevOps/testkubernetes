@@ -3,7 +3,7 @@ pr: none
 
 stages:
   - stage:
-    displayName: Deploy to AKS
+    displayName: Parallel deployment
     jobs:
       - deployment: AKS
         displayName: Deploy to AKS Environment
