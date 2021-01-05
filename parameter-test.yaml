@@ -7,6 +7,12 @@ parameters:
     type: string
   - name: namespace
     type: string
+  - name: chartPath
+    type: string
+  - name: chartName
+    type: string
+  - name: releaseName
+    type: string
 
 variables:
   helmVersion: 3.2.4
@@ -17,3 +23,6 @@ variables:
   kubernetesCluster: ${{ parameters.kubernetesCluster }}
   env: ${{ parameters.env }}
   namespace: ${{ parameters.namespace }}
+  chartPath: ${{ parameters.chartPath }}
+  chartName: ${{ parameters.chartName }}
+  releaseName: ${{ parameters.releaseName }}

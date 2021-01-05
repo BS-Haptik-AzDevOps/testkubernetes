@@ -5,7 +5,7 @@ parameters:
   - name: imageTag
     type: number
     displayName: 'Image Tag'
-    
+
 variables:
   - template: parameter-test.yaml
     parameters:
@@ -21,6 +21,12 @@ stages:
     jobs:
       - deployment: QA
         displayName: Deploy to QA Environment
+        variables:
+        - template: parameter-test.yaml
+          parameters:
+            chartPath: spinkube-chart
+            chartName: spinkube-chart
+            releaseName: Haptik-test
         pool:
           vmImage: 'ubuntu-latest'
         environment: '$(env)'

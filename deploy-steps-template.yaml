@@ -30,9 +30,9 @@ steps:
       namespace: '$(namespace)'
       command: upgrade
       chartType: Name
-      chartPath: spinkube-chart
-      chartName: spinkube-chart
-      releaseName: spinkube-chart
+      chartPath: '$(chartPath)'
+      chartName: $(chartName)
+      releaseName: $(releaseName)
       install: true
       failOnStandardError: true
       #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
