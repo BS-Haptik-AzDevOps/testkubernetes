@@ -1,0 +1,13 @@
+parameters:
+  - name: rggroup
+    type: string
+  - name: kubernetesCluster
+    type: string
+
+variables:
+  helmVersion: 3.2.4
+  containerRepository: spinnaker
+  containerRegistry: spinkube.azurecr.io
+  azuresubscription: BS-Haptik-Test-SVC-Connection
+  rggroup: ${{ parameters.rggroup }}
+  kubernetesCluster: ${{ parameters.kubernetesCluster }}
