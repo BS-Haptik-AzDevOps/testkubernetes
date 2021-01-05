@@ -7,13 +7,13 @@ parameters:
     displayName: 'Image Tag'
 
 variables:
-  - template: parameter-test.yaml
+  - template: deploy-common-variables.yaml
     parameters:
       kubernetesCluster: bs-spinnaker
       rggroup: Spinnaker-k8s
       env: QA.azdevops
       namespace: azdevops
-      
+
 stages:
   - stage:
     displayName: Deploy to QA
