@@ -13,8 +13,7 @@ variables:
       rggroup: Spinnaker-k8s
       env: QA.azdevops
       namespace: azdevops
-
-
+      
 stages:
   - stage:
     displayName: Deploy to QA
@@ -22,11 +21,7 @@ stages:
       - deployment: QA
         displayName: Deploy to QA Environment
         variables:
-        - template: parameter-test.yaml
-          parameters:
-            chartPath: spinkube-chart
-            chartName: spinkube-chart
-            releaseName: Haptik-test
+        - group: chart1-variables-group
         pool:
           vmImage: 'ubuntu-latest'
         environment: '$(env)'
