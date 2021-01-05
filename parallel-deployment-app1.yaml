@@ -17,7 +17,7 @@ stages:
         - group: AKS-variables
         pool:
           vmImage: 'ubuntu-latest'
-        environment: $(env)
+        environment: '$(env)'
         strategy:
           runOnce:
             deploy:
@@ -30,7 +30,7 @@ stages:
         - group: EKS-variables
         pool:
           vmImage: 'ubuntu-latest'
-        environment: $(env)
+        environment: '$(env)'
         strategy:
           runOnce:
             deploy:
@@ -43,7 +43,7 @@ stages:
         - group: GKE-variables
         pool:
           vmImage: 'ubuntu-latest'
-        environment: $(env)
+        environment: '$(env)'
         strategy:
           runOnce:
             deploy:
