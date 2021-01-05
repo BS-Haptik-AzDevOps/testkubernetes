@@ -11,15 +11,15 @@ variables:
     parameters:
       kubernetesCluster: bs-spinnaker
       rggroup: Spinnaker-k8s
-      env: QA.azdevops
+      env: AKS.azdevops
       namespace: azdevops
 
 stages:
   - stage:
-    displayName: Deploy to QA
+    displayName: Deploy to AKS
     jobs:
-      - deployment: QA
-        displayName: Deploy to QA Environment
+      - deployment: AKS
+        displayName: Deploy to AKS Environment
         variables:
         - group: chart1-variables-group
         pool:
