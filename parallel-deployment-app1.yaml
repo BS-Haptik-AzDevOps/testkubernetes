@@ -2,7 +2,7 @@ trigger: none
 pr: none
 
 variables:
-  - template: parallel-deployment-common-variable.yaml
+  - template: deployment-common-variable.yaml
     parameters:
       kubernetesCluster: bs-spinnaker
       rggroup: Spinnaker-k8s
