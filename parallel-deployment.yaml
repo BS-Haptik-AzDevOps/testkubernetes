@@ -2,12 +2,10 @@ trigger: none
 pr: none
 
 variables:
-  - template: deploy-common-variables.yaml
+  - template: parallel-deployment-common-variable.yaml
     parameters:
       kubernetesCluster: bs-spinnaker
       rggroup: Spinnaker-k8s
-      env: AKS.azdevops
-      namespace: azdevops
 
 stages:
   - stage:
