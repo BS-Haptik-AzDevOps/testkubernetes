@@ -4,50 +4,57 @@ pr: none
 stages:
   - stage:
     displayName: Deploy to AKS
+    jobs:
+      - deployment: AKS
+        displayName: Deploy to AKS Environment
+        variables:
+        - group: chart1-variables-group
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: AKS.aksnamespace
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yaml
+                  parameters:
+                    kubernetesCluster: bs-spinnaker
+                    rggroup: Spinnaker-k8s
+                    env: AKS.aksnamespace
+                    namespace: aksnamespace
 
-	jobs:
-	- deployment:
-	  displayName: Deploy to AKS
-	  pool:
-		vmImage: ubuntu-latest
-	  environment: AKS.aksnamespace
-	  strategy:
-		runOnce:
-		  deploy:
-			  steps:
-				- template: deploy-steps-template.yaml
-				  parameters:
-					kubernetesCluster: bs-spinnaker
-					rggroup: Spinnaker-k8s
-					env: AKS.aksnamespace
-					namespace: aksnamespace
-	- deployment:
-	  displayName: Deploy to GKE
-	  pool:
-		vmImage: ubuntu-latest
-	  environment: GKE.gkenamespace
-	  strategy:
-		runOnce:
-		  deploy:
-			  steps:
-				- template: deploy-steps-template.yaml
-				  parameters:
-					kubernetesCluster: bs-spinnaker
-					rggroup: Spinnaker-k8s
-					env: GKE.gkenamespace
-					namespace: gkenamespace
-	- deployment:
-	  displayName: Deploy to EKS
-	  pool:
-		vmImage: ubuntu-latest
-	  environment: EKS.eksnamespace
-	  strategy:
-		runOnce:
-		  deploy:
-			  steps:
-				- template: deploy-steps-template.yaml
-				  parameters:
-					kubernetesCluster: bs-spinnaker
-					rggroup: Spinnaker-k8s
-					env: EKS.eksnamespace
-					namespace: eksnamespace
+      - deployment: EKS
+        displayName: Deploy to EKS Environment
+        variables:
+        - group: chart1-variables-group
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: EKS.eksnamespace
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yaml
+                  parameters:
+                    kubernetesCluster: bs-spinnaker
+                    rggroup: Spinnaker-k8s
+                    env: EKS.aksnamespace
+                    namespace: eksnamespace
+
+      - deployment: GKE
+        displayName: Deploy to GKE Environment
+        variables:
+        - group: chart1-variables-group
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: GKE.gkenamespace
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yaml
+                  parameters:
+                    kubernetesCluster: bs-spinnaker
+                    rggroup: Spinnaker-k8s
+                    env: GKE.gkenamespace
+                    namespace: gkenamespace
