@@ -21,6 +21,6 @@ steps:
       chartPath: '$(chartPath)'
       chartName: $(chartName)
       releaseName: $(releaseName)
-      install: true
+      valueFile: $(valuesFrom)
       failOnStandardError: true
       #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
