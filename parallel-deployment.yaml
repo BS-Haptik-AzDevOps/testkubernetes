@@ -1,0 +1,52 @@
+trigger:
+- none
+
+jobs:
+- deployment:
+  displayName: Deploy to AKS
+  pool:
+    vmImage: ubuntu-latest
+  environment: AKS.aksnamespace
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - checkout: self
+        - task: KubernetesManifest@0
+          displayName: Deploy to Kubernetes cluster
+          inputs:
+            action: deploy
+            namespace: aksnamespace
+            manifests: manifests/*
+- deployment:
+  displayName: Deploy to GKE
+  pool:
+    vmImage: ubuntu-latest
+  environment: GKE.gkenamespace
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - checkout: self
+        - task: KubernetesManifest@0
+          displayName: Deploy to Kubernetes cluster
+          inputs:
+            action: deploy
+            namespace: gkenamespace
+            manifests: manifests/*
+- deployment:
+  displayName: Deploy to EKS
+  pool:
+    vmImage: ubuntu-latest
+  environment: EKS.eksnamespace
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - checkout: self
+        - task: KubernetesManifest@0
+          displayName: Deploy to Kubernetes cluster
+          inputs:
+            action: deploy
+            namespace: eksnamespace
+            manifests: manifests/*
