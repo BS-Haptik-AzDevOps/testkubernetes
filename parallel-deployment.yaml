@@ -38,7 +38,7 @@ stages:
                   parameters:
                     kubernetesCluster: bs-spinnaker
                     rggroup: Spinnaker-k8s
-                    env: EKS.aksnamespace
+                    env: EKS.eksnamespace
                     namespace: eksnamespace
 
       - deployment: GKE
