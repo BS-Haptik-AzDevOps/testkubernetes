@@ -14,53 +14,38 @@ stages:
       - deployment: AKS
         displayName: Deploy to AKS Environment
         variables:
-        - group: chart1-variables-group
+        - group: AKS-variables
         pool:
           vmImage: 'ubuntu-latest'
-        environment: AKS.azdevops
+        environment: $(env)
         strategy:
           runOnce:
             deploy:
               steps:
                 - template: deploy-steps-template.yaml
-                  parameters:
-                    kubernetesCluster: bs-spinnaker
-                    rggroup: Spinnaker-k8s
-                    env: AKS.azdevops
-                    namespace: azdevops
 
       - deployment: EKS
         displayName: Deploy to EKS Environment
         variables:
-        - group: chart1-variables-group
+        - group: EKS-variables
         pool:
           vmImage: 'ubuntu-latest'
-        environment: EKS.aws
+        environment: $(env)
         strategy:
           runOnce:
             deploy:
               steps:
                 - template: deploy-steps-template.yaml
-                  parameters:
-                    kubernetesCluster: bs-spinnaker
-                    rggroup: Spinnaker-k8s
-                    env: EKS.aws
-                    namespace: aws
 
       - deployment: GKE
         displayName: Deploy to GKE Environment
         variables:
-        - group: chart1-variables-group
+        - group: GKE-variables
         pool:
           vmImage: 'ubuntu-latest'
-        environment: GKE.google
+        environment: $(env)
         strategy:
           runOnce:
             deploy:
               steps:
                 - template: deploy-steps-template.yaml
-                  parameters:
-                    kubernetesCluster: bs-spinnaker
-                    rggroup: Spinnaker-k8s
-                    env: GKE.google
-                    namespace: google
