@@ -8,7 +8,7 @@ steps:
       failOnStandardError: true
                     
   - task: HelmDeploy@0
-    displayName: 'Deploy first chart'
+    displayName: 'Helm Deploy'
     inputs:
       connectionType: 'Azure Resource Manager'
       azureSubscription: '$(azuresubscription)'
@@ -24,7 +24,7 @@ steps:
       valueFile: $(valuesFrom)
       failOnStandardError: true
       #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
-
+   
   - task: HelmDeploy@0
     displayName: 'Deploy the dependency chart'
     inputs:
