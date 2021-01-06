@@ -1,3 +1,8 @@
+parameters:
+  - name: imageTag
+    type: number
+    displayName: Enter the Image Tag
+
 steps:
   - checkout: self
 
@@ -41,4 +46,4 @@ steps:
       releaseName: $(dep_releaseName)
       valueFile: $(dep_valuesFrom)
       #failOnStandardError: true
-      overrideValues: 'image.tag=$(imageTag)'
+      overrideValues: 'image.tag=${{ parameters.imageTag }}'
