@@ -12,8 +12,8 @@ steps:
     displayName: 'Helm Deploy'
     condition: succeeded()
     inputs:
-      connectionType: 'Azure Resource Manager'
-      azureSubscription: '$(azuresubscription)'
+      #connectionType: 'Azure Resource Manager'
+      #azureSubscription: '$(azuresubscription)'
       azureResourceGroup: '$(rggroup)'
       kubernetesCluster: '$(kubernetesCluster)'
       useClusterAdmin: true
@@ -31,8 +31,8 @@ steps:
     displayName: 'Deploy the dependency chart'
     condition: succeeded()
     inputs:
-      connectionType: 'Azure Resource Manager'
-      azureSubscription: '$(azuresubscription)'
+      #connectionType: 'Azure Resource Manager'
+      #azureSubscription: '$(azuresubscription)'
       azureResourceGroup: '$(rggroup)'
       kubernetesCluster: '$(kubernetesCluster)'
       useClusterAdmin: true
