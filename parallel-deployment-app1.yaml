@@ -4,7 +4,7 @@ pr: none
 parameters:
   - name: tag
     type: number
-    displayName: Tag
+    displayName: Enter the image tag
 
 variables:
   - template: deployment-common-variable.yaml
