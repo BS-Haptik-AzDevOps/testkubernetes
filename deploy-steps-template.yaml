@@ -41,4 +41,4 @@ steps:
       releaseName: $(dep_releaseName)
       valueFile: $(dep_valuesFrom)
       failOnStandardError: true
-      #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
+      overrideValues: 'image.tag=${{ parameters.imageTag }}'

@@ -1,6 +1,11 @@
 trigger: none
 pr: none
 
+parameters:
+  - name: imageTag
+    type: number
+    displayName: Enter the Image Tag
+
 variables:
   - template: deployment-common-variable.yaml
     parameters:
