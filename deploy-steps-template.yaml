@@ -9,6 +9,7 @@ steps:
                     
   - task: HelmDeploy@0
     displayName: 'Helm Deploy'
+    condition: succeeded()
     inputs:
       connectionType: 'Azure Resource Manager'
       azureSubscription: '$(azuresubscription)'
@@ -27,6 +28,7 @@ steps:
    
   - task: HelmDeploy@0
     displayName: 'Deploy the dependency chart'
+    condition: succeeded()
     inputs:
       connectionType: 'Azure Resource Manager'
       azureSubscription: '$(azuresubscription)'

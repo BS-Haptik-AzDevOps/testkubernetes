@@ -7,7 +7,7 @@ parameters:
     type: number
 
 variables:
-  helmVersion: 3.2.4
+  helmVersion: 
   azuresubscription: BS-Haptik-Test-SVC-Connection
   chartPath: spinkube-chart
   chartName: spinkube-chart
