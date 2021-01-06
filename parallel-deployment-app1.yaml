@@ -1,11 +1,17 @@
 trigger: none
 pr: none
 
+parameters:
+  - name: tag
+    type: number
+    displayName: Tag
+
 variables:
   - template: deployment-common-variable.yaml
     parameters:
       kubernetesCluster: bs-spinnaker
       rggroup: Spinnaker-k8s
+      tag: ${{ parameters.tag }}
 
 stages:
   - stage:

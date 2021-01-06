@@ -5,7 +5,6 @@ parameters:
     type: string
   - name: tag
     type: number
-    displayName: image tag
 
 variables:
   helmVersion: 3.2.4
