@@ -37,15 +37,15 @@ stages:
               steps:
                 - template: deploy-steps-template.yaml
 
-      - deployment: GKE
-        displayName: Deploy to GKE Environment
-        variables:
-        - group: GKE-variables
-        pool:
-          vmImage: 'ubuntu-latest'
-        environment: GKE.google
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - template: deploy-steps-template.yaml
+     # - deployment: GKE
+     #   displayName: Deploy to GKE Environment
+     #   variables:
+     #   - group: GKE-variables
+     #   pool:
+     #     vmImage: 'ubuntu-latest'
+     #   environment: GKE.google
+     #   strategy:
+     #     runOnce:
+     #       deploy:
+     #         steps:
+     #           - template: deploy-steps-template.yaml
