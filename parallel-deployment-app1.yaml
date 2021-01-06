@@ -6,6 +6,12 @@ variables:
     parameters:
       kubernetesCluster: bs-spinnaker
       rggroup: Spinnaker-k8s
+      chartPath: spinkube-chart
+      chartName: spinkube-chart
+      releaseName: haptik-test
+      dep_chartPath: dependency-chart
+      dep_chartName: dependency-chart
+      dep_releaseName: dep-haptik-test
 
 stages:
   - stage:
@@ -23,7 +29,7 @@ stages:
             deploy:
               steps:
                 - template: deploy-steps-template.yaml
-
+      
       - deployment: EKS
         displayName: Deploy to EKS Environment
         variables:
