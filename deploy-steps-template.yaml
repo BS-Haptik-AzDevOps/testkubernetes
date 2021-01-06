@@ -5,7 +5,7 @@ steps:
     displayName: 'Install Helm'
     inputs:
       helmVersionToInstall: '$(helmVersion)'
-      failOnStandardError: true
+      #failOnStandardError: true
                     
   - task: HelmDeploy@0
     displayName: 'Helm Deploy'
@@ -22,7 +22,7 @@ steps:
       chartName: $(chartName)
       releaseName: $(releaseName)
       valueFile: $(valuesFrom)
-      failOnStandardError: true
+      #failOnStandardError: true
       #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
    
   - task: HelmDeploy@0
@@ -40,5 +40,5 @@ steps:
       chartName: $(dep_chartName)
       releaseName: $(dep_releaseName)
       valueFile: $(dep_valuesFrom)
-      failOnStandardError: true
-      overrideValues: 'image.tag=${{ parameters.imageTag }}'
+      #failOnStandardError: true
+      overrideValues: 'image.tag=$(imageTag)'
