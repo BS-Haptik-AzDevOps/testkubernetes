@@ -7,7 +7,7 @@ strategy:
 
 image:
   repository: spinkube.azurecr.io/spinnaker
-  tag: 11
+  tag: 20
   pullPolicy: IfNotPresent
 
 imagePullSecrets: []
