@@ -2,29 +2,16 @@ parameters:
   - name: rggroup
     type: string
   - name: kubernetesCluster
-    type: string
-  - name: chartPath
-    type: string
-  - name: chartName
-    type: string
-  - name: releaseName
-    type: string
-  - name: dep_chartPath
-    type: string
-  - name: dep_chartName
-    type: string
-  - name: dep_releaseName
-    type: string
-  
+    type: string  
 
 variables:
   helmVersion: 3.2.4
   azuresubscription: BS-Haptik-Test-SVC-Connection
+  chartPath: spinkube-chart
+  chartName: spinkube-chart
+  releaseName: haptik-test
+  dep_chartPath: dependency-chart
+  dep_chartName: dependency-chart
+  dep_releaseName: dep-haptik-test
   rggroup: ${{ parameters.rggroup }}
   kubernetesCluster: ${{ parameters.kubernetesCluster }}
-  chartPath: ${{ parameters.chartPath }}
-  chartName: ${{ parameters.chartName }}
-  releaseName: ${{ parameters.releaseName }}
-  dep_chartPath: ${{ parameters.dep_chartPath }}
-  dep_chartName: ${{ parameters.dep_chartName }}
-  dep_releaseName: ${{ parameters.dep_releaseName }}
