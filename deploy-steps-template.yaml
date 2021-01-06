@@ -3,6 +3,7 @@ steps:
 
   - task: HelmInstaller@1
     displayName: 'Install Helm'
+    condition: succeeded()
     inputs:
       helmVersionToInstall: '$(helmVersion)'
       #failOnStandardError: true
