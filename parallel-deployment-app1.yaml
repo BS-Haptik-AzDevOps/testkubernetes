@@ -17,18 +17,18 @@ stages:
   - stage:
     displayName: Parallel deployment
     jobs:
-    #  - deployment: AKS
-    #    displayName: Deploy to AKS Environment
-    #    variables:
-    #    - group: AKS-variables
-    #    pool:
-    #      vmImage: 'ubuntu-latest'
-    #    environment: AKS.azdevops
-    #    strategy:
-    #      runOnce:
-    #        deploy:
-    #          steps:
-    #            - template: deploy-steps-template.yaml
+      - deployment: AKS
+        displayName: Deploy to AKS Environment
+        variables:
+        - group: AKS-variables
+        pool:
+          vmImage: 'ubuntu-latest'
+        environment: AKS.azdevops
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - template: deploy-steps-template.yaml
       
       - deployment: EKS
         displayName: Deploy to EKS Environment
@@ -43,15 +43,15 @@ stages:
               steps:
                 - template: deploy-steps-template.yaml
 
-      - deployment: GKE
-        displayName: Deploy to GKE Environment
-        variables:
-        - group: GKE-variables
-        pool:
-          vmImage: 'ubuntu-latest'
-        environment: GKE.google
-        strategy:
-          runOnce:
-            deploy:
-              steps:
-                - template: deploy-steps-template.yaml
+    #  - deployment: GKE
+    #    displayName: Deploy to GKE Environment
+    #    variables:
+    #    - group: GKE-variables
+    #    pool:
+    #      vmImage: 'ubuntu-latest'
+    #    environment: GKE.google
+    #    strategy:
+    #      runOnce:
+    #        deploy:
+    #          steps:
+    #            - template: deploy-steps-template.yaml
