@@ -14,7 +14,7 @@ steps:
     inputs:
       azureResourceGroup: '$(rggroup)'
       kubernetesCluster: '$(kubernetesCluster)'
-      useClusterAdmin: true
+      #useClusterAdmin: true
       namespace: '$(namespace)'
       command: upgrade
       chartType: Name
@@ -33,7 +33,7 @@ steps:
       #azureSubscription: '$(azuresubscription)'
       azureResourceGroup: '$(rggroup)'
       kubernetesCluster: '$(kubernetesCluster)'
-      useClusterAdmin: true
+      #useClusterAdmin: true
       namespace: '$(namespace)'
       command: upgrade
       chartType: Name
