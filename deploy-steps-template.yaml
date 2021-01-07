@@ -6,7 +6,6 @@ steps:
     condition: succeeded()
     inputs:
       helmVersionToInstall: '$(helmVersion)'
-      #failOnStandardError: true
                     
   - task: HelmDeploy@0
     displayName: 'Helm Deploy'
@@ -14,7 +13,6 @@ steps:
     inputs:
       azureResourceGroup: '$(rggroup)'
       kubernetesCluster: '$(kubernetesCluster)'
-      #useClusterAdmin: true
       namespace: '$(namespace)'
       command: upgrade
       chartType: Name
@@ -22,18 +20,14 @@ steps:
       chartName: $(chartName)
       releaseName: $(releaseName)
       valueFile: $(valuesFrom)
-      #failOnStandardError: true
       #overrideValues: 'image.repository=$(containerRegistry).azurecr.io/$(containerRepository)'
    
   - task: HelmDeploy@0
     displayName: 'Deploy the dependency chart'
     condition: succeeded()
     inputs:
-      #connectionType: 'Azure Resource Manager'
-      #azureSubscription: '$(azuresubscription)'
       azureResourceGroup: '$(rggroup)'
       kubernetesCluster: '$(kubernetesCluster)'
-      #useClusterAdmin: true
       namespace: '$(namespace)'
       command: upgrade
       chartType: Name
@@ -41,5 +35,4 @@ steps:
       chartName: $(dep_chartName)
       releaseName: $(dep_releaseName)
       valueFile: $(dep_valuesFrom)
-      #failOnStandardError: true
       overrideValues: 'image.tag=$(tag)'
