@@ -8,7 +8,7 @@ stages:
       - job: AKS
         displayName: Rolling restart on AKS Environment
         variables:
-          serviceconnection: AKS.RollingRestart
+          - group: Rolling-restart-AKS
         pool:
           vmImage: 'ubuntu-latest'
         steps:
@@ -19,7 +19,7 @@ stages:
       - job: EKS    
         displayName: Rolling restart on EKS Environment
         variables:
-          serviceconnection: EKS.RollingRestart
+          - group: Rolling-restart-EKS
         pool:
           vmImage: 'ubuntu-latest'
         steps:
