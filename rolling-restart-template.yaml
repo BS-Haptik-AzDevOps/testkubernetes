@@ -11,4 +11,4 @@ steps:
       kubernetesServiceEndpoint: ${{ parameters.connection }}
       namespace: $(namespace)
       command: 'patch'
-      arguments: deployment $(deployment) -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`"date"`\"}}}}}"
+      arguments: deployment $(deployment) -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\date\"}}}}}"
