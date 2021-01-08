@@ -1,0 +1,26 @@
+trigger: none
+pr: none
+
+stages:
+  - stage:
+    displayName: Rolling restart on AKS
+    jobs:
+      - job: AKS
+        displayName: Rolling restart on AKS Environment
+        variables:
+          serviceconnection: AKS.RollingRestart
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - template: rolling-restart-template.yaml
+  - stage: 
+    displayName: Rolling resart on EKS
+    jobs:
+      - job: EKS    
+        displayName: Rolling restart on EKS Environment
+        variables:
+          serviceconnection: EKS.RollingRestart
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - template: rolling-restart-template.yaml
