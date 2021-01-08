@@ -4,6 +4,6 @@ steps:
   - task: Kubernetes@1
     inputs:
       connectionType: Kubernetes Service Connection
-      kubernetesServiceEndpoint: $(serviceconnection)
+      kubernetesServiceEndpoint: '$(serviceconnection)'
       command: 'patch'
       arguments: deployment web -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`date +'%s'`\"}}}}}"
