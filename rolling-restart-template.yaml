@@ -1,10 +1,14 @@
+parameters:
+  - name: connection
+    type: string
+
 steps:
   - checkout: self
 
   - task: Kubernetes@1
     inputs:
       connectionType: Kubernetes Service Connection
-      kubernetesServiceEndpoint: $(connection)
+      kubernetesServiceEndpoint: ${{ parameters.connection }}
       namespace: $(namespace)
       command: 'patch'
       arguments: deployment $(deployment) -p "{\"spec\":{\"template\":{\"metadata\":{\"annotations\":{\"date\":\"`date +'%s'`\"}}}}}"

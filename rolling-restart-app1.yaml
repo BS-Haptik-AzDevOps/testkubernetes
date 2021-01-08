@@ -13,6 +13,8 @@ stages:
           vmImage: 'ubuntu-latest'
         steps:
           - template: rolling-restart-template.yaml
+            parameters:
+              connection: AKS.RollingRestart
   - stage: 
     displayName: Rolling resart on EKS
     jobs:
@@ -24,3 +26,5 @@ stages:
           vmImage: 'ubuntu-latest'
         steps:
           - template: rolling-restart-template.yaml
+            parameters:
+              connection: EKS.RollingRestart
